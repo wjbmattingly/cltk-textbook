@@ -6,10 +6,10 @@ This course is an introduction to BookNLP
 
 | Lesson Number      | Lesson Title |
 | ----------- | ----------- |
-|01 |Introduction to BookNLP|
-|02 |Getting Started with BookNLP |
-|03 |Understanding BookNLP Output |
-|04 |Character Analysis |
-|05 |Event Analysis|
-|06 |Quote Analysis|
-|07 |BookNLP with Historical Documents|
+|01 |Introduction to CLTK|
+|02 |Getting Started with CLTK |
+|03 |Languages|
+|04 ||
+|05 ||
+|06 ||
+|07 ||

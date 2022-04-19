@@ -5,6 +5,7 @@
 <p align="center">Postdoctoral Fellow at the Smithsonian Institution's Data Science Lab</p>
 <p align="center">and</p>
 <p align="center">United States Holocaust Memorial Museum</p>
+<p align="center">and CLTK Maintainer</p>
 
 ### <p align="center">How to Cite</p>
 Mattingly, William. <i>Introduction to CLTK</i>, 2022. <a href="cltk.pythonhumanities.com" target="_blank">cltk.pythonhumanities.com</a>.
