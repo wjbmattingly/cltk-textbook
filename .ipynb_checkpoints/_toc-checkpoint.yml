@@ -1,0 +1,10 @@
+format: jb-book
+root: intro
+parts:
+- caption: Key Concepts and Terms
+  numbered: true
+  chapters:
+  - file: 01_intro
+    title: Introduction to CLTK
+  - file: 02_starting
+    title: Getting Started with BookNLP
