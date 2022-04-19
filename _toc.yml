@@ -7,4 +7,4 @@ parts:
   - file: 01_intro
     title: Introduction to CLTK
   - file: 02_starting
-    title: Getting Started with BookNLP
+    title: Getting Started with CLTK
