@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Getting Started with NAME OF BOOK &#8212; Introduction to CLTK</title>
+    <title>2. Getting Started with CLTK &#8212; Introduction to CLTK</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -232,13 +232,60 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#header-2">
-   2.3. HEADER 2
+  <a class="reference internal nav-link" href="#getting-text-data">
+   2.3. Getting Text Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-a-cltk-pipeline">
+   2.4. Calling a CLTK Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-cltk-doc-object">
+   2.5. The CLTK Doc Object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doc-object-accessors">
+   2.6. Doc Object Accessors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raw">
+     2.6.1. Raw
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#token">
+     2.6.2. Token
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lemmata">
+     2.6.3. Lemmata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pos">
+     2.6.4. POS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#words">
+     2.6.5. Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentence-tokens">
+     2.6.6. Sentence Tokens
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   2.4. Conclusion
+   2.7. Conclusion
   </a>
  </li>
 </ul>
@@ -251,7 +298,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1><center>Getting Started with NAME OF BOOK</center></h1>
+                <h1><center>Getting Started with CLTK</center></h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -272,13 +319,60 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#header-2">
-   2.3. HEADER 2
+  <a class="reference internal nav-link" href="#getting-text-data">
+   2.3. Getting Text Data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calling-a-cltk-pipeline">
+   2.4. Calling a CLTK Pipeline
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-cltk-doc-object">
+   2.5. The CLTK Doc Object
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#doc-object-accessors">
+   2.6. Doc Object Accessors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raw">
+     2.6.1. Raw
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#token">
+     2.6.2. Token
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lemmata">
+     2.6.3. Lemmata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pos">
+     2.6.4. POS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#words">
+     2.6.5. Words
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sentence-tokens">
+     2.6.6. Sentence Tokens
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   2.4. Conclusion
+   2.7. Conclusion
   </a>
  </li>
 </ul>
@@ -290,8 +384,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="center-getting-started-with-name-of-book-center">
-<h1><span class="section-number">2. </span><center>Getting Started with NAME OF BOOK</center><a class="headerlink" href="#center-getting-started-with-name-of-book-center" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="center-getting-started-with-cltk-center">
+<h1><span class="section-number">2. </span><center>Getting Started with CLTK</center><a class="headerlink" href="#center-getting-started-with-cltk-center" title="Permalink to this headline">¶</a></h1>
 <center>Dr. W.J.B. Mattingly</center>
 <center>Smithsonian Data Science Lab and United States Holocaust Memorial Museum</center>
 <center>April 2022</center><div class="section" id="covered-in-this-chapter">
@@ -307,11 +401,367 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="introduction">
 <h2><span class="section-number">2.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="header-2">
-<h2><span class="section-number">2.3. </span>HEADER 2<a class="headerlink" href="#header-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getting-text-data">
+<h2><span class="section-number">2.3. </span>Getting Text Data<a class="headerlink" href="#getting-text-data" title="Permalink to this headline">¶</a></h2>
+<p>While the CLTK allows you to access large corpora for each language, to get familiar with the basics, we will be working in this portion of the textbook with local data. A lot of what follows can be found in a <a href="https://github.com/cltk/cltk/blob/master/notebooks/CLTK%20Demonstration.ipynb">notebook on the CLTK GitHub repo.</a> Inside this textbook repository, we already have a collection of texts available. Let’s take a look at a sample from Livy.</p>
+<p>First, we need to load the textual data and create an object of the text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;texts/lat-livy.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">livy_full</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Excellent! Now, let’s analyze this just a bit so we can get a sense of our data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Text snippet:&quot;</span><span class="p">,</span> <span class="n">livy_full</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Character count:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">livy_full</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Approximate token count:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">livy_full</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text snippet: Iam primum omnium satis constat Troia capta in ceteros saevitum esse Troianos, duobus, Aeneae Antenorique, et vetusti iure hospitii et quia pacis reddendaeque Helenae semper auctores fuerant, omne ius
+Character count: 921462
+Approximate token count: 129799
+</pre></div>
+</div>
+</div>
+</div>
+<p>We use the term “approximate token count” here because tokens are considered anything that has syntactic meaning in text. This means that a token is not just simply a word, rather punctuation as well. We use the word approximate here because the split() function in Python only separates words by whitespace (as a default). In other words, the proper token count is much higher since each punctuation is split with the word it is next to.</p>
+</div>
+<div class="section" id="calling-a-cltk-pipeline">
+<h2><span class="section-number">2.4. </span>Calling a CLTK Pipeline<a class="headerlink" href="#calling-a-cltk-pipeline" title="Permalink to this headline">¶</a></h2>
+<p>The CLTK is specifically designed as a natural language processing pipeline for ancient and medieval languages. In order to leverage the power of the library, we first need to import the NLP pipeline from the CLTK library.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">cltk</span> <span class="kn">import</span> <span class="n">NLP</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If the above code worked without error, then it means we have successfully imported the NLP class from CLTK. This allows us to now create a CLTK NLP pipeline. In order to do that, however, we need to know the language of the document that we are examining. Since Livy is a Latin author, the language code will be “lat”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the default Pipeline for Latin</span>
+<span class="n">cltk_nlp</span> <span class="o">=</span> <span class="n">NLP</span><span class="p">(</span><span class="n">language</span><span class="o">=</span><span class="s2">&quot;lat&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>‎𐤀 CLTK version &#39;1.0.25&#39;.
+Pipeline for language &#39;Latin&#39; (ISO: &#39;lat&#39;): `LatinNormalizeProcess`, `LatinStanzaProcess`, `LatinEmbeddingsProcess`, `StopsProcess`, `LatinNERProcess`, `LatinLexiconProcess`.
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is Pythonic to create an NLP object with either the name “nlp” (spaCy syntax) or cltk_nlp (CLTK syntax). One reason for distinguishing between these two is that you may have two separate NLP pipelines in your workflow. It may help, therefore, to specify which nlp object is your cltk NLP pipeline. You can name this object whatever you like but it is best to stick to these conventions as it will make your code easier to understand.</p>
+<p>The output from this cell provides key information for our pipeline. It includes the following pipes, or processes on the input data (the text):</p>
+<ul class="simple">
+<li><p>LatinNormalizeProcess</p></li>
+<li><p>LatinStanzaProcess</p></li>
+<li><p>LatinEmbeddingsProcess</p></li>
+<li><p>StopsProcess</p></li>
+<li><p>LatinNERProcess</p></li>
+<li><p>LatinLexiconProcess</p></li>
+</ul>
+<p>We will cover each of these in depth later in this notebook. For now, simply understand that as your text moves through the NLP class, it moves through a pipeline of different processes. The sequence here is important as some processes rely on post-processing from earlier pipes.</p>
+<p>If we wish to remove a pipe from the pipeline, we can use .pipeline.process.pop(INSERT INDEX EHRER). Let’s see what this looks like in practice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cltk_nlp</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">processes</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cltk_nlp</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">processes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;class &#39;cltk.alphabet.processes.LatinNormalizeProcess&#39;&gt;, &lt;class &#39;cltk.dependency.processes.LatinStanzaProcess&#39;&gt;, &lt;class &#39;cltk.embeddings.processes.LatinEmbeddingsProcess&#39;&gt;, &lt;class &#39;cltk.stops.processes.StopsProcess&#39;&gt;, &lt;class &#39;cltk.ner.processes.LatinNERProcess&#39;&gt;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>By using pop at -1, we are removing the final pipe. One reason for wishing to do this may be speed. The LatinLexiconProcess is one of the more time-consuming pipes in the pipeline and may not be necessary for your workflow which just needs to use the NER pipe.</p>
+</div>
+<div class="section" id="the-cltk-doc-object">
+<h2><span class="section-number">2.5. </span>The CLTK Doc Object<a class="headerlink" href="#the-cltk-doc-object" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have our pipeline assembled, let’s try to analyze a text. To do this, we need to create a CLTK Doc object. If you are familiar with spaCy or other NLP libraries, this should be somewhat familiar to you. The Doc object is a special class that holds data about the text. Before wee examine the Doc object, though, we need to first create it. First, though, let’s shorten our Livy text.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">livy</span> <span class="o">=</span> <span class="n">livy_full</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">livy_full</span><span class="p">)</span> <span class="o">//</span> <span class="mi">12</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Approximate token count:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">livy</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Approximate token count: 10905
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have shortened Livy, let’s create the CLTK Doc object. To do this, we will run the CLTK NLP class object, call the analyze method and pass in one argument: the text which is livy. If it is your first time running this, you may be prompted to download the stanza models. Type “Y” to download them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cltk_doc</span> <span class="o">=</span> <span class="n">cltk_nlp</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">livy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CLTK message: This part of the CLTK depends upon the Stanza NLP library.
+CLTK message: Allow download of Stanza models to ``C:\Users\wma22/stanza_resources/la/tokenize/ittb.pt``? [Y/n] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> y
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "31d0b025fe6149f29cc9518a50664cdd", "version_major": 2, "version_minor": 0}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 08:53:02 INFO: Downloading these customized packages for language: la (Latin)...
+=======================
+| Processor | Package |
+-----------------------
+| tokenize  | ittb    |
+| pos       | ittb    |
+| lemma     | ittb    |
+| depparse  | ittb    |
+| pretrain  | ittb    |
+=======================
+</pre></div>
+</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "cd9a79a507c44afdb79fba28ccc78ddd", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "8a2d3e5f8ab648a8a7ede8999633edd0", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "afd78146315c4dceb327168660b1c390", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "630aef6d91ea44acb18419134869421a", "version_major": 2, "version_minor": 0}
+</script><script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "7a27f6e606914beca6cf8e3dfdb286c5", "version_major": 2, "version_minor": 0}
+</script><div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022-04-20 08:53:59 INFO: Finished downloading models and saved to C:\Users\wma22\stanza_resources.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This part of the CLTK depends upon models from the CLTK project.
+Do you want to download &#39;https://github.com/cltk/lat_models_cltk&#39; to &#39;~/cltk_data/lat&#39;? [Y/n] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> y
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that all the models are downloaded, our pipeline should have completed its processing on the text. Let’s start examining the  doc object a bit more closely. Let’s first examining what type of object it is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">cltk_doc</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;cltk.core.data_types.Doc&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice that it is a special class object that is related to the cltk, specifically a Doc object.</p>
+</div>
+<div class="section" id="doc-object-accessors">
+<h2><span class="section-number">2.6. </span>Doc Object Accessors<a class="headerlink" href="#doc-object-accessors" title="Permalink to this headline">¶</a></h2>
+<p>The Doc object contains what the CLTK calls “accessors”. If you are familiar with spaCy syntax, these function rather like spaCy attributes. They contain a specific piece of data. In some instances, this will be at the token level (e.g. token, lemmata, pos, etc.). In other cases, they occur at the sentence level (e.g. sentences, sentences_strings, sentences_tokens). This allows you to parse the Doc object in several different ways. Let’s take a look at all the accessors that are available to us from the Latin pipeline.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">accessors</span> <span class="o">=</span> <span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">dir</span><span class="p">(</span><span class="n">cltk_doc</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">x</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;__&quot;</span><span class="p">)])</span>
+<span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">accessors</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>_get_words_attribute
+embeddings
+embeddings_model
+language
+lemmata
+morphosyntactic_features
+normalized_text
+pipeline
+pos
+raw
+sentence_embeddings
+sentences
+sentences_strings
+sentences_tokens
+stanza_doc
+stems
+tokens
+tokens_stops_filtered
+words
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s now examine some of these a bit more closely. Each will have a header so that you can use the navigation in the textbook (on the right of the screen) to navigate more easily.</p>
+<div class="section" id="raw">
+<h3><span class="section-number">2.6.1. </span>Raw<a class="headerlink" href="#raw" title="Permalink to this headline">¶</a></h3>
+<p>The raw accessor is no different from the plain text object that we passed to the pipeline. It’s index, therefore, functions just as the text input does. Let’s take a look.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">raw</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iam primum omnium sa
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="token">
+<h3><span class="section-number">2.6.2. </span>Token<a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h3>
+<p>The token accessor, however, is fundamentally different. This accessor contains all sequential tokens in the text. Let’s take a look at the first 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">tokens</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iam&#39;, &#39;primum&#39;, &#39;omnium&#39;, &#39;satis&#39;, &#39;constat&#39;, &#39;Troia&#39;, &#39;capta&#39;, &#39;in&#39;, &#39;ceteros&#39;, &#39;saevitum&#39;, &#39;esse&#39;, &#39;Troianos&#39;, &#39;,&#39;, &#39;duobus&#39;, &#39;,&#39;, &#39;Aeneae&#39;, &#39;Antenorique&#39;, &#39;,&#39;, &#39;et&#39;, &#39;vetusti&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice how not only words are separated out in the output below, but also punctuation marks. This is what makes processing a text so powerful. We can analyze a text at the word level.</p>
+</div>
+<div class="section" id="lemmata">
+<h3><span class="section-number">2.6.3. </span>Lemmata<a class="headerlink" href="#lemmata" title="Permalink to this headline">¶</a></h3>
+<p>Like the token accessor, the lemmata accessor also functions at the token level. Unlike the token accessor, however, the lemmata contains the lemma forms of each token. Note “capta” above is now replaced with its lemma: “capio”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">lemmata</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Iam&#39;, &#39;primus&#39;, &#39;omnis&#39;, &#39;satis&#39;, &#39;consto&#39;, &#39;Troia&#39;, &#39;capio&#39;, &#39;in&#39;, &#39;ceterus&#39;, &#39;saevitum&#39;, &#39;sum&#39;, &#39;Troianos&#39;, &#39;,&#39;, &#39;duo&#39;, &#39;,&#39;, &#39;Aeneae&#39;, &#39;Antenorique&#39;, &#39;,&#39;, &#39;et&#39;, &#39;vetusti&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pos">
+<h3><span class="section-number">2.6.4. </span>POS<a class="headerlink" href="#pos" title="Permalink to this headline">¶</a></h3>
+<p>The accessor pos also functions at the token level. The word pos refers to part-of-speech. This is common across all NLP libraries. It allows us to see what part of speech a given word is.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">pos</span><span class="p">[:</span><span class="mi">20</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ADV&#39;, &#39;ADJ&#39;, &#39;PRON&#39;, &#39;ADV&#39;, &#39;VERB&#39;, &#39;NOUN&#39;, &#39;VERB&#39;, &#39;ADP&#39;, &#39;PRON&#39;, &#39;VERB&#39;, &#39;AUX&#39;, &#39;NOUN&#39;, &#39;PUNCT&#39;, &#39;NUM&#39;, &#39;PUNCT&#39;, &#39;NOUN&#39;, &#39;VERB&#39;, &#39;PUNCT&#39;, &#39;CCONJ&#39;, &#39;NOUN&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="words">
+<h3><span class="section-number">2.6.5. </span>Words<a class="headerlink" href="#words" title="Permalink to this headline">¶</a></h3>
+<p>The words accessor may seem on the surface to resemble the token accessor, but it is a lot different. It contains all metadata about the word. It functions rather like spaCy’s token attribute. Let’s take a look at the seventh word in the text, “capta”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Word(index_char_start=None, index_char_stop=None, index_token=6, index_sentence=0, string=&#39;capta&#39;, pos=verb, lemma=&#39;capio&#39;, stem=None, scansion=None, xpos=&#39;L2|modM|tem4|grp1|casA|gen2&#39;, upos=&#39;VERB&#39;, dependency_relation=&#39;acl&#39;, governor=5, features={Aspect: [perfective], Case: [nominative], Degree: [positive], Gender: [feminine], Number: [singular], Tense: [past], VerbForm: [participle], Voice: [passive]}, category={F: [neg], N: [neg], V: [pos]}, stop=False, named_entity=False, syllables=None, phonetic_transcription=None, definition=None)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that unlike the token accessor, the words accessor allows us to see all metadata relevant to this individual word. We can access each of these features as well. Let’s say I was interested in knowing its part-of-speech. I can access that data like so:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>verb
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we know it is a verb. What if we wanted to know its voice? We could access its features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{Aspect: [perfective], Case: [nominative], Degree: [positive], Gender: [feminine], Number: [singular], Tense: [past], VerbForm: [participle], Voice: [passive]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>And from here we can navigate this dictionary to the “Voice” key.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;Voice&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[passive]
+</pre></div>
+</div>
+</div>
+</div>
+<p>And we can see that it is passive. We can access all these features equally easily.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number:&quot;</span><span class="p">,</span> <span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;Number&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tense:&quot;</span><span class="p">,</span> <span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;Tense&quot;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;VerbForm:&quot;</span><span class="p">,</span> <span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;VerbForm&quot;</span><span class="p">])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Voice:&quot;</span><span class="p">,</span> <span class="n">cltk_doc</span><span class="o">.</span><span class="n">words</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s2">&quot;Voice&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number: [singular]
+Tense: [past]
+VerbForm: [participle]
+Voice: [passive]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The words accessor is one of the more powerful aspects of the CLTK pipeline. I encourage you to spend a bit of time exploring what is available to you from the words accessor with your own text.</p>
+</div>
+<div class="section" id="sentence-tokens">
+<h3><span class="section-number">2.6.6. </span>Sentence Tokens<a class="headerlink" href="#sentence-tokens" title="Permalink to this headline">¶</a></h3>
+<p>Unlike the previous accessors, the sentence_tokens accessor allows us to analyze the Doc object at the sentencee level. This allows us to parse a text sentence-by-sentence which is not possible in Python. The split(“.”) approach separates a text at every “.”. This means that it will separate the text where a “.” is used to denote an abbreviation. In Latin, as in English, this makes the approach impossible to use effectively. The CLTK pipeline, however, allows us to parse ancient and medieval languages effectively at the sentence level.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cltk_doc</span><span class="o">.</span><span class="n">sentences_tokens</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&#39;Iam&#39;, &#39;primum&#39;, &#39;omnium&#39;, &#39;satis&#39;, &#39;constat&#39;, &#39;Troia&#39;, &#39;capta&#39;, &#39;in&#39;, &#39;ceteros&#39;, &#39;saevitum&#39;, &#39;esse&#39;, &#39;Troianos&#39;, &#39;,&#39;, &#39;duobus&#39;, &#39;,&#39;, &#39;Aeneae&#39;, &#39;Antenorique&#39;, &#39;,&#39;, &#39;et&#39;, &#39;vetusti&#39;, &#39;iure&#39;, &#39;hospitii&#39;, &#39;et&#39;, &#39;quia&#39;, &#39;pacis&#39;, &#39;reddendaeque&#39;, &#39;Helenae&#39;, &#39;semper&#39;, &#39;auctores&#39;, &#39;fuerant&#39;, &#39;,&#39;, &#39;omne&#39;, &#39;ius&#39;, &#39;belli&#39;, &#39;Achiuos&#39;, &#39;abstinuisse&#39;, &#39;;&#39;], [&#39;casibus&#39;, &#39;deinde&#39;, &#39;variis&#39;, &#39;Antenorem&#39;, &#39;cum&#39;, &#39;multitudine&#39;, &#39;Enetum&#39;, &#39;,&#39;, &#39;qui&#39;, &#39;seditione&#39;, &#39;ex&#39;, &#39;Paphlagonia&#39;, &#39;pulsi&#39;, &#39;et&#39;, &#39;sedes&#39;, &#39;et&#39;, &#39;ducem&#39;, &#39;rege&#39;, &#39;Pylaemene&#39;, &#39;ad&#39;, &#39;Troiam&#39;, &#39;amisso&#39;, &#39;quaerebant&#39;, &#39;,&#39;, &#39;venisse&#39;, &#39;in&#39;, &#39;intimum&#39;, &#39;maris&#39;, &#39;Hadriatici&#39;, &#39;sinum&#39;, &#39;,&#39;, &#39;Euganeisque&#39;, &#39;qui&#39;, &#39;inter&#39;, &#39;mare&#39;, &#39;Alpesque&#39;, &#39;incolebant&#39;, &#39;pulsis&#39;, &#39;Enetos&#39;, &#39;Troianosque&#39;, &#39;eas&#39;, &#39;tenuisse&#39;, &#39;terras&#39;, &#39;.&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="conclusion">
-<h2><span class="section-number">2.4. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.7. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>This chapter has introduced you to the salient features of the CLTK NLP Class and how to construct pipeline and pass a text through it. In the next chapter, we will examine specifically named entity recognition (NER).</p>
 </div>
 </div>
 
